@@ -1,0 +1,34 @@
+name: "Apache Superset"
+type: "sw.application"
+version: 1.4.0
+description: "Superset is fast, lightweight, intuitive, and loaded with options that make it easy for users of all skill sets to explore and visualize their data."
+post-provisioning: >-
+  ## Usage instructions
+  
+  Once your device joins the fleet you'll need to allow some time for it to download the application.
+  
+  Once the application is downloaded and running, you should be able to access it using the IP address of your device.
+  The default username is `admin` and the default password is also `admin`. You may change the details of the default
+  admin user after logging in by going to `Settings > Security > List Users` then editing the admin user details.
+  
+  Documentation for Apache Superset can be found at https://superset.apache.org/docs/intro/
+assets:
+  repository:
+    type: "blob.asset"
+    data:
+      url: "https://github.com/balena-io-playground/balena-apache-superset"
+  logo:
+    type: "blob.asset"
+    data:
+      url: "https://raw.githubusercontent.com/balena-io-playground/balena-apache-superset/master/logo.svg"
+data:
+  applicationEnvironmentVariables:
+    - ADMIN_USERNAME: 'admin'
+    - ADMIN_PASSWORD: 'admin'
+    - ADMIN_EMAIL: 'admin@localhost'
+  defaultDeviceType: "genericx86-64-ext"
+  supportedDeviceTypes:
+    - "generic"
+    - "genericx86-64-ext"
+    - "intel-nuc"
+    - "qemux86-64"

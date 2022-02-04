@@ -1,0 +1,14 @@
+---
+version: '2.1'
+
+volumes:
+  superset: {}
+
+services:
+  superset:
+    build: superset
+    ports:
+      - "80:8000"
+    restart: unless-stopped
+    volumes:
+      - superset:/app/superset_home
